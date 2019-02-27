@@ -1,0 +1,18 @@
+/* footer */
+
+.midias{
+    color: rgb(252, 249, 249);
+    font-family: montserrat;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 70px;
+}
+.copyright{
+    background-color:#021324;
+    height: 50px;
+    color: rgb(252, 249, 249);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: center;
+    padding-top: 25px
+}
