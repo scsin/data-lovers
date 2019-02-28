@@ -7,4 +7,13 @@
 // arquivos e pastas para que sua estrutura fique clara para suas 
 // companheiras.
 
-fetch();
+let data = Object.values(INJURIES[0]);
+
+for(items of data){
+    if(items == null){
+        document.write('Ø' + ' ');
+    }
+    else{
+        document.write(items + ' ');
+    }
+}
