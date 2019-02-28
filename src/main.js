@@ -17,3 +17,5 @@ for(items of data){
         document.write(items + ' ');
     }
 }
+
+document.getElementById("year").

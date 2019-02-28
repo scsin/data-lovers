@@ -55,6 +55,13 @@
 
     Trabalhar com dados pode ser algo complexo. O site X fornece informações de acidentes de transportes de forma rápida e clara, economizando tempo e energia do pesquisador.
 
+#### Protótipo
+![Design Sprint](assets/Image2.jpg),(assets/Image3.jpg)
+![Protótipo do Site](assets/Image1.jpg), (https://marvelapp.com/a493g7h)
+
+#### Testes de usabilidade
+No teste de usabilidade foi detectado problema na home e os testes de usabilidade ajudaram na solução do problema.
+
 ## Índice
 
 * [Preâmbulo](#preâmbulo)
