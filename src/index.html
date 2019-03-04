@@ -13,9 +13,9 @@
     </header>
     
     <main>
-      <select name="" id="" >
+      <select name="" id="slct">
         <option selected hidden>Tipo de transporte</option>
-        <option value="">Ciclistas</option>
+        <option value="" id="cic">Ciclistas</option>
         <option value="">Motociclistas</option>
         <option value="">Ocupantes de caminhão grande</option>
         <option value="">Ocupantes de caminhão pequeno</option>
@@ -26,20 +26,17 @@
         <option value="">Rodovia</option>
         <option value="">Transportadora</option>
       </select>
-      <table>
+      <table id="year" class="table">
         <tr>
-          <th>Ano</th>
-          <th>Valor</th>
-        </tr>
-        <tr>
-          <td id="year"></td>
-          <td id="value"></td>
-        </tr>
-        <tr>
-          <td>1970</td>
-          <td>0</td>
+          <th class="column1">Ano</th>
         </tr>
       </table>
+      <table id="value" class="table">
+        <tr>
+          <th class="column2">Valor</th>
+        </tr>
+      </table>
+      <p id="par"></p>
     </main>
     <div id="root"></div>
     <script id="data" src="./data/injuries/injuries.js"></script>

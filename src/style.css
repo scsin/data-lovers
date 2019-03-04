@@ -16,3 +16,25 @@
     text-align: center;
     padding-top: 25px
 }
+
+select{
+    margin: 10px;
+}
+
+#table{
+    display: table;
+    /* display: inline-block; */
+}
+
+#column1{
+    display: inline-block;
+}
+
+#column2{
+    display: inline-block;
+}
+
+td {
+    padding: 5px;
+    background-color: rgb(220, 220, 220);
+}
