@@ -1,24 +1,69 @@
-/* footer */
 
-.midias{
-    color: rgb(252, 249, 249);
-    font-family: montserrat;
-    font-size: 30px;
-    text-align: center;
-    padding-top: 70px;
+.nav-items{
+    background-color: #e5eff8;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 40px;
+    display: flex;
+    font-size: 100%;
 }
-.copyright{
-    background-color:#021324;
-    height: 50px;
+
+p {
+    display: flex;
+    align-items: left;
+    justify-content: flex-end;
+    display: inline;
+    margin-right: 10px;
+    font-size: 125%;
+    list-style-type: none;
+    flex-grow: 1;
+    
+}
+
+li{
+    color: #569dc8;
+    padding:30px;
+    justify-content: flex-end;
+    display: inline;
+    margin-right: 30px;
+    font-size: 125%;
+    list-style-type: none;
+    line-height: 176px;
+}
+
+li:hover {
+    color: #3d4a5a;
+    cursor: pointer;
+}
+
+.expl-text{
+    background-color:#3d4a5a;
+    margin-top: 10px;
+    height: 60px;
     color: rgb(252, 249, 249);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-size: 23px;
     text-align: center;
-    padding-top: 25px
+    padding-top: 30px;
+
 }
 
+#slct{
+    -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;  /* Imagem de fundo (Seta) */
+    background-position: 218px center;  /*Posição da imagem do background*/
+    width: 250px; /* Tamanho do select, maior que o tamanho da div "div-select" */
+    height:30px; /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
+    border:1px solid #ddd;
+    padding: 5px;
+    align-items: center;
+    font-size: 16px;
+    color: #3d4a5a;
+
+ }
+
 select{
-    margin: 10px;
+    margin: 30px;
+    align-items: center;
 }
 
 #table{
@@ -37,4 +82,42 @@ select{
 td {
     padding: 5px;
     background-color: rgb(220, 220, 220);
+}
+
+.fundo{
+    background-color:#569dc8;
+    height: 250px;
+}
+
+a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    text-align: center;
+    padding-top: 10px;
+ }
+
+.midias{
+   color: rgb(252, 249, 249);
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 30px;
+   text-align: center;
+   padding-top: 14px;
+}
+
+.copyright{
+   background-color:#3d4a5a;
+   height: 50px;
+   color: white;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   text-align: center;
+   padding-top: 35px
+}
+
+.circle{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 35px 70px;
 }
