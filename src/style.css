@@ -41,7 +41,7 @@ li:hover {
     height: 60px;
     color: rgb(252, 249, 249);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 23px;
+    font-size: 20px;
     text-align: center;
     padding-top: 30px;
 
@@ -62,7 +62,7 @@ li:hover {
  }
 
 select{
-    margin: 30px;
+    margin: 30px 0px;
     align-items: center;
 }
 
@@ -102,6 +102,11 @@ a{
    font-size: 30px;
    text-align: center;
    padding-top: 14px;
+   
+}
+
+a:link {
+    color: #3d4a5a;
 }
 
 .copyright{
@@ -120,4 +125,21 @@ a{
     align-items: center;
     justify-content: space-between;
     margin: 35px 70px;
+}
+
+.circle :hover {
+    cursor: pointer;
+}
+
+img.acende {
+    opacity: 0.88; 
+    -moz-opacity: 0.88;
+    Filter: Alpha(Opacity=90)
+ }
+    
+    
+img.acende:hover {
+    opacity: 1.0; 
+    -moz-opacity: 1.0;
+     Filter: Alpha(Opacity=100)
 }
