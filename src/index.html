@@ -1,50 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header id="ok">
-      <nav class="nav-items">
 
-      </nav>
-    </header>
-    
-    <main>
-      <select name="" id="slct">
-        <option selected hidden>Tipo de transporte</option>
-        <option value="" id="cic">Ciclistas</option>
-        <option value="">Motociclistas</option>
-        <option value="">Ocupantes de caminhão grande</option>
-        <option value="">Ocupantes de caminhão pequeno</option>
-        <option value="">Ocupantes de carro</option>
-        <option value="">Ocupantes de ônibus</option>
-        <option value="">Passageiro ou ocupante</option>      
-        <option value="">Pedestres</option>
-        <option value="">Rodovia</option>
-        <option value="">Transportadora</option>
-      </select>
-      <table id="year" class="table">
-        <tr>
-          <th class="column1">Ano</th>
-        </tr>
-      </table>
-      <table id="value" class="table">
-        <tr>
-          <th class="column2">Valor</th>
-        </tr>
-      </table>
-      <p id="par"></p>
-    </main>
-    <div id="root"></div>
-    <script id="data" src="./data/injuries/injuries.js"></script>
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <!-- <script src="data.js"></script> -->
-    <script src="main.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+  <header id="ok">
+    <nav class="nav-items">
+       <p> <img src="assets/sala.png" alt="logo sala"></p>
+        <ul>
+            <li>HOME</li>
+            <li>DADOS</li>
+            <li>GRÁFICO</li>
+            <li>CONTATO</li>
+        </ul>
+    </nav>
+    <section class="expl-text">
+        <p>Estatística de pessoas feridas por meio de transporte rodoviário nos EUA</p>
+      </section>
+  </header>
+
+  <main>
+    <select name="" id="slct">
+      <option selected hidden>Tipo de transporte</option>
+      <option value="" id="cic">Ciclistas</option>
+      <option value="">Motociclistas</option>
+      <option value="">Ocupantes de caminhão grande</option>
+      <option value="">Ocupantes de caminhão pequeno</option>
+      <option value="">Ocupantes de carro</option>
+      <option value="">Ocupantes de ônibus</option>
+      <option value="">Passageiro ou ocupante</option>
+      <option value="">Pedestres</option>
+      <option value="">Rodovia</option>
+      <option value="">Transportadora</option>
+    </select>
+    <table id="year" class="table">
+      <tr>
+        <th class="column1">Ano</th>
+      </tr>
+    </table>
+    <table id="value" class="table">
+      <tr>
+        <th class="column2">Pessoas feridas</th>
+      </tr>
+    </table>
+    <p id="par"></p>
+  </main>
+  <div id="root"></div>
+  <script id="data" src="./data/injuries/injuries.js"></script>
+  <!-- <script src="./data/pokemon/pokemon.js"></script> -->
+  <!-- <script src="./data/steam/steam.js"></script> -->
+  <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+  <!-- <script src="./data/lol/lol.js"></script> -->
+  <!-- <script src="data.js"></script> -->
+  <script src="main.js"></script>
+  
+  <section class="circle">
+    <img src="assets/carro.png" class="acende" alt="icone carro">
+    <img src="assets/trem.png" class="acende" alt="icone trem">
+    <img src="assets/bike.png" class="acende" alt="icone bike">
+    <img src="assets/barco.png" class="acende" alt="icone barco">
+    <img src="assets/balao.png" class="acende" alt="icone balao">
+    <img src="assets/aviao.png" class="acende" alt="icone aviao">
+</section>
+
+  
+  <footer>
+    <section class="fundo">
+      <div class="midias">
+        <h5 class="titles-footer ">SIGA-NOS NAS REDES SOCAIS</h5>
+        <i class="fab fa-facebook-f icons"></i>
+        <i class="fab fa-google-plus-g icons"></i>
+        <i class="fab fa-twitter icons"></i>
+        <i class="fab fa-linkedin-in icons"></i>
+        <i class="fab fa-fw fa-dribbble icons"></i><br>
+        <a href="http://www.salaestatistica.com.br/">www.salaestatistica.com.br</a>
+      </div>
+    </section>
+    <section class="copyright">
+      <p>Copyright © SaLa Estatística 2019 - Todos os direitos reservados.</p>
+    </section>
+  </footer>
+</body>
+
 </html>
