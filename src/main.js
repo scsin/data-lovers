@@ -22,43 +22,111 @@ let data = Object.values((INJURIES));
 // data.map((elem, i, array) => console.log(elem.Total_Injured_Persons_Motorcyclists));
 
 // armazenar em uma array os valores de todos os anos e de Total_Injured_Persons_Motorcyclists
-let year = data.map((elem) => (elem.Year));
-
-// pegar cada valor dentro da array year e imprimir na coluna ano
-for(i of year){
-    let row = document.getElementById("year").insertRow(-1);
-    let cell = row.insertCell(-1);
-    cell.innerHTML = i;
-}
+// let year = data.map((elem) => (elem.Year));
 
 // pegar os valores anuais das categorias do dropdown e guardar em uma array
-let arr = [0, data.map((elem) => (elem.Total_Injured_Persons_Pedalcyclists)), data.map((elem) => (elem.Total_Injured_Persons_Motorcyclists)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Large)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Light)), data.map((elem) => (elem.Total_Injured_Persons_Passenger_Car_Occupants)), data.map((elem) => (elem.Total_Injured_Persons_Bus_Occupants)), data.map((elem) => (elem.Total_Injured_Persons_Passenger_Or_Occupant)), data.map((elem) => (elem.Total_Injured_Persons_Pedestrians)), data.map((elem) => (elem.Total_Injured_Persons_Highway)), data.map((elem) => (elem.Total_Injured_Persons_Commuter_Carrier))];
+let arr = [data.map((elem) => (elem.Year)), data.map((elem) => (elem.Total_Injured_Persons_Pedalcyclists))];
+    // , data.map((elem) => (elem.Total_Injured_Persons_Motorcyclists)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Large)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Light)), data.map((elem) => (elem.Total_Injured_Persons_Passenger_Car_Occupants)), data.map((elem) => (elem.Total_Injured_Persons_Bus_Occupants)), data.map((elem) => (elem.Total_Injured_Persons_Passenger_Or_Occupant)), data.map((elem) => (elem.Total_Injured_Persons_Pedestrians)), data.map((elem) => (elem.Total_Injured_Persons_Highway)), data.map((elem) => (elem.Total_Injured_Persons_Commuter_Carrier))];
 
 // Vincular as opções do dropdown com a função categories
-let chng = document.getElementById("slct");
-chng.addEventListener('change', categories);
+let chng = document.getElementById("slct").addEventListener('change', categories);
 
-// replaceChild()
-// filter(): usar para filtrar do maior para o menor....
-
-
+// FILTRAR E VISUALIZAR OS DADOS
 // pegar cada valor dentro da array arr e imprimir na coluna valor, começando na cell[i] (O ÍNDICE DROPDOWN DEVE SER IGUAL A POSIÇÃO DO ARRAY)
 function categories(){
-    // let row = document.getElementById("value").clear;
+    // pegar cada valor dentro da array year e imprimir na coluna ano
     let ind = document.getElementById("slct").selectedIndex;
-    for(i of arr[ind]){
-        // pegar o INDEX do i para colocar no row.deleteCell[i[index]]
-        // let delC = arr[ind].indexOf(i);
-        // console.log(delC);
-        // row.deleteCell(i[delC]);
-        row = document.getElementById("value").insertRow(-1);
-        if(i == null){
-            cell = row.insertCell(-1);
-            cell.innerHTML = '-';
-        }
-        else{
-            cell = row.insertCell(-1);
-            cell.innerHTML = i;
-        }
-    }
+    console.table(arr[ind]);
 }
+//         let row = document.getElementById("year").insertRow(-1);
+//         let cell = row.insertCell(-1);
+//         cell.innerHTML = i;
+//     }
+//     // let row = document.getElementById("value").clear;
+//     var teste = arr[ind];
+//     // pegar cada valor dentro das diferentes categorias da array arr e imprimir na coluna valor
+//     for(i of arr[ind]){
+//         // pegar o INDEX do i para colocar no row.deleteCell[i[index]]
+//         // let delC = arr[ind].indexOf(i);
+//         // console.log(delC);
+//         // row.deleteCell(i[delC]);
+//         row = document.getElementById("value").insertRow(-1);
+//         if(i == null){
+//             cell = row.insertCell(-1);
+//             cell.innerHTML = '-';
+//             i = 0;
+//         }
+//         else{
+//             cell = row.insertCell(-1);
+//             cell.innerHTML = i;
+//         }
+//     }
+//     // let sorted = document.getElementById("column2").addEventListener('click', sortedTable);
+//     // teste.sort()
+//     // ORDENAR
+//     let sortedTable = teste.sort((a, b) => (a > b ? 1 : -1));
+//     // function sortedTable(a, b){
+//     //     console.log(b);
+//     //     if(b >= a){
+//     //         console.log(1);
+//     //     }
+//     //     else{
+//     //         console.log(0);
+//     //         // return -1;
+//     //     }
+//     // }
+//     console.log(sortedTable);
+// }
+
+// sorted.sort((a,b) => (b >= a ? 1 : -1));
+// sort(): do maior para o menor e vice-versa (vídeo Jaque 22 min)
+//         addEventListener() do clique no 'Ano' e 'Valor'
+//         function()
+
+// ESSA FUNÇÃO SÓ VAI SER CHAMADA SE O USUÁRIO CLICAR NO 'ANO' OU 'VALOR'
+// ADICIONAR UM MOUSEOVER 
+// ELE NÃO TÁ ACHANDO A E B
+
+
+
+
+
+
+
+
+
+
+// posso usar a tabela com uma coluna e concatenar year e value (ficaria bom??? acho que não)
+// usar template string (?????)
+// replaceChild(): 
+
+
+
+
+
+
+
+
+// FILTRAR
+// filter(): valores maiores do que X
+//         criar uma variável input e um button (?)
+//         IF os dados forem maiores ou menores do que X > print
+// let but = document.getElementById("filter").value.addEventListener("click", v);
+// function v(){
+//     if(values > i){
+//         console.log(i);
+//     }
+// };
+
+
+
+
+
+
+
+
+
+
+// CÁLCULO AGREGADO
+// adicionar o cálculo agregado em outro lugar que não a tabela
+// reduce(média);

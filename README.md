@@ -53,7 +53,7 @@
 
 ## Solução
 
-    Trabalhar com dados pode ser algo complexo. O site X fornece informações de acidentes de transportes de forma rápida e clara, economizando tempo e energia do pesquisador.
+    Trabalhar com dados pode ser algo complexo. O site SaLa Estatística fornece informações de acidentes de transportes de forma rápida e clara,economizando tempo e energia do pesquisador.
 
 ## Protótipo
 ![Design Sprint](assets/Image2.jpeg),(assets/Image3.jpeg)
@@ -72,6 +72,11 @@
     Print dos dados year;
     Print dos dados value;
     AddEventListener;
+
+## Versão 0.0.3
+    Adição Header, Footer;
+    Favicon;
+    CSS;
 
 ## Índice
 

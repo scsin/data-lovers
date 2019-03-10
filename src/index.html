@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
 
 <head>
   <meta charset="utf-8">
@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 </head>
 
 <body>
   <header id="ok">
     <nav class="nav-items">
-       <p> <img src="assets/sala.png" alt="logo sala"></p>
+       <img src="assets/sala.png" alt="logo sala">
         <ul>
             <li>HOME</li>
             <li>DADOS</li>
@@ -24,35 +24,40 @@
         </ul>
     </nav>
     <section class="expl-text">
-        <p>Estatística de pessoas feridas por meio de transporte rodoviário nos EUA</p>
+        <p>Transporte rodoviário nos EUA</p>
       </section>
   </header>
 
   <main>
     <select name="" id="slct">
       <option selected hidden>Tipo de transporte</option>
-      <option value="" id="cic">Ciclistas</option>
+      <option value="">Ciclistas</option>
       <option value="">Motociclistas</option>
       <option value="">Ocupantes de caminhão grande</option>
       <option value="">Ocupantes de caminhão pequeno</option>
       <option value="">Ocupantes de carro</option>
-      <option value="">Ocupantes de ônibus</option>
-      <option value="">Passageiro ou ocupante</option>
+      <!-- <option value="">Ocupantes de ônibus</option>
+      <option value="">Passageiro ou ocupante</option> -->
       <option value="">Pedestres</option>
       <option value="">Rodovia</option>
-      <option value="">Transportadora</option>
+      <!-- <option value="">Transportadora</option> -->
     </select>
-    <table id="year" class="table">
-      <tr>
-        <th class="column1">Ano</th>
-      </tr>
+    <h1 id="title"></h1>
+    <table id="container" class="container">
+      <thead>
+        <tr>
+          <th class="column">Ano</th>
+          <th id="column2" class="column">Pessoas Feridas</th>
+        </tr>
+      </thead>
+      <tbody id="table">
+        <tr>
+          <td id="year" hidden></td>
+          <td id="value" hidden></td>
+        </tr>
+      </tbody>
     </table>
-    <table id="value" class="table">
-      <tr>
-        <th class="column2">Pessoas feridas</th>
-      </tr>
-    </table>
-    <p id="par"></p>
+    <ul id="list"></ul>
   </main>
   <div id="root"></div>
   <script id="data" src="./data/injuries/injuries.js"></script>
@@ -61,7 +66,8 @@
   <!-- <script src="./data/worldbank/worldbank.js"></script> -->
   <!-- <script src="./data/lol/lol.js"></script> -->
   <!-- <script src="data.js"></script> -->
-  <script src="main.js"></script>
+  <!-- <script src="main.js"></script> -->
+  <script src="aula07-03.js"></script>
   
   <section class="circle">
     <img src="assets/carro.png" class="acende" alt="icone carro">
@@ -76,13 +82,13 @@
   <footer>
     <section class="fundo">
       <div class="midias">
-        <h5 class="titles-footer ">SIGA-NOS NAS REDES SOCAIS</h5>
+        <h5 class="midias">SIGA-NOS NAS REDES SOCIAIS</h5>
         <i class="fab fa-facebook-f icons"></i>
         <i class="fab fa-google-plus-g icons"></i>
         <i class="fab fa-twitter icons"></i>
         <i class="fab fa-linkedin-in icons"></i>
         <i class="fab fa-fw fa-dribbble icons"></i><br>
-        <a href="http://www.salaestatistica.com.br/">www.salaestatistica.com.br</a>
+        <a href="index.html">www.salaestatistica.com.br</a>
       </div>
     </section>
     <section class="copyright">
