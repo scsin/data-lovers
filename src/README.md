@@ -56,8 +56,8 @@
     Trabalhar com dados pode ser algo complexo. O site SaLa Estatística fornece informações de acidentes de transportes de forma rápida e clara,economizando tempo e energia do pesquisador.
 
 ## Protótipo
-![Design Sprint](assets/Image2.jpeg),(assets/Image3.jpeg)
-![Protótipo do Site](assets/Image1.jpeg), (https://marvelapp.com/a493g7h)
+![Design Sprint](/assets/Image2.jpeg),(/assets/Image3.jpeg)
+![Protótipo do Site](/assets/Image1.jpeg), (https://marvelapp.com/a493g7h)
 
 ## Testes de usabilidade
     Os testes detectaram problemas nas funcionalidades do protótipo e ajudaram a identificar possíveis melhorias a serem implantadas.

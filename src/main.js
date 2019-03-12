@@ -38,45 +38,45 @@ function categories(){
     let ind = document.getElementById("slct").selectedIndex;
     console.table(arr[ind]);
 }
-//         let row = document.getElementById("year").insertRow(-1);
-//         let cell = row.insertCell(-1);
-//         cell.innerHTML = i;
-//     }
-//     // let row = document.getElementById("value").clear;
-//     var teste = arr[ind];
-//     // pegar cada valor dentro das diferentes categorias da array arr e imprimir na coluna valor
-//     for(i of arr[ind]){
-//         // pegar o INDEX do i para colocar no row.deleteCell[i[index]]
-//         // let delC = arr[ind].indexOf(i);
-//         // console.log(delC);
-//         // row.deleteCell(i[delC]);
-//         row = document.getElementById("value").insertRow(-1);
-//         if(i == null){
-//             cell = row.insertCell(-1);
-//             cell.innerHTML = '-';
-//             i = 0;
-//         }
-//         else{
-//             cell = row.insertCell(-1);
-//             cell.innerHTML = i;
-//         }
-//     }
-//     // let sorted = document.getElementById("column2").addEventListener('click', sortedTable);
-//     // teste.sort()
-//     // ORDENAR
-//     let sortedTable = teste.sort((a, b) => (a > b ? 1 : -1));
-//     // function sortedTable(a, b){
-//     //     console.log(b);
-//     //     if(b >= a){
-//     //         console.log(1);
-//     //     }
-//     //     else{
-//     //         console.log(0);
-//     //         // return -1;
-//     //     }
-//     // }
-//     console.log(sortedTable);
-// }
+        let row = document.getElementById("year").insertRow(-1);
+        let cell = row.insertCell(-1);
+        cell.innerHTML = i;
+    }
+    // let row = document.getElementById("value").clear;
+    var teste = arr[ind];
+    // pegar cada valor dentro das diferentes categorias da array arr e imprimir na coluna valor
+    for(i of arr[ind]){
+        // pegar o INDEX do i para colocar no row.deleteCell[i[index]]
+        // let delC = arr[ind].indexOf(i);
+        // console.log(delC);
+        // row.deleteCell(i[delC]);
+        row = document.getElementById("value").insertRow(-1);
+        if(i == null){
+            cell = row.insertCell(-1);
+            cell.innerHTML = '-';
+            i = 0;
+        }
+        else{
+            cell = row.insertCell(-1);
+            cell.innerHTML = i;
+        }
+    }
+    // let sorted = document.getElementById("column2").addEventListener('click', sortedTable);
+    // teste.sort()
+    // ORDENAR
+    let sortedTable = teste.sort((a, b) => (a > b ? 1 : -1));
+    // function sortedTable(a, b){
+    //     console.log(b);
+    //     if(b >= a){
+    //         console.log(1);
+    //     }
+    //     else{
+    //         console.log(0);
+    //         // return -1;
+    //     }
+    // }
+    console.log(sortedTable);
+}
 
 // sorted.sort((a,b) => (b >= a ? 1 : -1));
 // sort(): do maior para o menor e vice-versa (vídeo Jaque 22 min)

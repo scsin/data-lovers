@@ -1,4 +1,8 @@
-// FUNCIONANDO
+// cleanTable(); fazer para todos os eventos
+// // insertCells(); fazer para todos os eventos (?)
+// // insertYear(); fazer para todos os eventos
+// insertValues(); chamar uma função para cada evento (2)
+// // printValues(); fazer para todos os eventos
 
 const data = Object.values((INJURIES));
 
@@ -7,8 +11,7 @@ year.push('Méd', 'Máx', 'Mín');
 
 const arr = [0, data.map((elem) => (elem.Total_Injured_Persons_Pedalcyclists)), data.map((elem) => (elem.Total_Injured_Persons_Motorcyclists)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Large)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Light)), data.map((elem) => (elem.Total_Injured_Persons_Passenger_Car_Occupants)), data.map((elem) => (elem.Total_Injured_Persons_Bus_Occupants)), data.map((elem) => (elem.Total_Injured_Persons_Passenger_Or_Occupant)), data.map((elem) => (elem.Total_Injured_Persons_Pedestrians)), data.map((elem) => (elem.Total_Injured_Persons_Highway)), data.map((elem) => (elem.Total_Injured_Persons_Commuter_Carrier))];
 
-let plus;
-let row;
+let row = document.getElementById("table");
 let firstCell;
 let secondCell;
 let average;
@@ -17,16 +20,14 @@ let chng = document.getElementById("slct");
 let value = document.getElementById("column2");
 
 // SELECT
-// if alguma coisa...... dispara os eventos if e else do select ou do Pessoas feridas
 if(chng.addEventListener('change', function(){
     cleanTable();
-        for(i of year){
-            row = document.getElementById("table").insertRow(-1);
-            firstCell = row.insertCell(-1);
-            secondCell = row.insertCell(-1);
-            insertValues();
-        }
+    insertCellsValues();
 }));
+
+// let main = document.getElementsByTagName('main').addEventListener('change', function(){
+//     cleanTable();
+// });
 
 // PESSOAS FERIDAS
 if(value.addEventListener('click', function(){
@@ -35,9 +36,18 @@ if(value.addEventListener('click', function(){
 }));
 
 function cleanTable(){
-    row = document.getElementById("table");
     table.innerHTML = "";
-    plus = 0;
+}
+
+function insertCellsValues(){
+    for(i of year){
+        row = document.getElementById("table").insertRow(-1);
+        firstCell = row.insertCell(-1);
+        secondCell = row.insertCell(-1);
+        insertValues();
+    }
+    // if(for chamado por chng){chamar insertCellsValues()}
+    // else(chamar insertCellsSort());
 }
 
 function insertCellsSort(){
@@ -61,26 +71,32 @@ function insertValues(){
         secondCell.innerHTML = '-';
     }
     else{
-        plus += 1;
         arrayFilter.push(arr[ind][count]);
-        average = ((arr[ind]).reduce((accum, curr) => accum + curr)/plus).toFixed(2);
+        console.log(row.rowIndex);
         secondCell.innerHTML = arr[ind][count];
-        arrayFilter.splice(plus);
-        if(plus == 26){
+        average = ((arr[ind]).reduce((accum, curr) => accum + curr)/arrayFilter.length).toFixed(2);
+        if(arrayFilter.length == 26){
             let max = Math.max(...arrayFilter);
             let min = Math.min(...arrayFilter);
             arr[ind].push(average, max, min);
         }
-    }
-}
-    
-function sorted(){
-    firstCell.innerHTML = i.slice(0,4);
-    secondCell.innerHTML = arr[ind].sort();
+    }        
 }
 
-//     let value = document.getElementById("column2")
-        // value.addEventListener('click', sortedAsc);
+// ORDENAR PELO ÍNDICE DE CADA CÉLULA (?)
+// CRIAR UM OBJETO COM KEY (ANO), VALOR (VALUE) E PRINTAR NA ORDEM CORRETA
+function sorted(){
+    firstCell.innerHTML = i.slice(0,4);
+    let count = year.indexOf(i);
+    let ind = document.getElementById("slct").selectedIndex;
+    console.log(arr[ind]);
+    let sortedAsc = arr[ind].sort();
+    // console.log(sortedAsc.indexOf(i));
+    // console.log(sortedAsc[count]);
+    let sortedDesc = arr[ind].reverse();
+    secondCell.innerHTML = sortedAsc[count];
+}
+
 //     function sortedAsc(){
 //         cleanTable();
 //         console.log(arr[ind].sort());
@@ -90,7 +106,7 @@ function sorted(){
 //         console.log(arr[ind].reverse());
 //             // (a, b) => (a > b ? -1 : 1)));
 //     }
-// });
+
 
 // // CHART.JS
 // var chart = document.getElementById("chart").getContext("2d");

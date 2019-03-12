@@ -12,6 +12,10 @@ body{
     align-items: center;
 }
 
+#hidden{
+    display: none;
+}
+
 p {
     display: inline;
     font-size: 27px;
@@ -95,6 +99,11 @@ main{
 
 .container tr:hover {
     background-color: rgb(31, 39, 57);
+}
+
+#chart{
+    width: 100px;
+    height: 100px;
 }
 
 .fundo{
