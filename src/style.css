@@ -101,11 +101,6 @@ main{
     background-color: rgb(31, 39, 57);
 }
 
-#chart{
-    width: 100px;
-    height: 100px;
-}
-
 .fundo{
     background-color:rgb(86, 157, 200);
     height: 200px;
@@ -153,3 +148,13 @@ img.acende {
 img.acende:hover {
     opacity: 1.0; 
 }
+
+.chart{
+    background-color: #569dc8;
+    width: 1200px;
+    margin: 20px;
+    height: 350px;
+    padding: 10px;
+    }
+
+    

@@ -20,7 +20,7 @@ let chng = document.getElementById("slct");
 let value = document.getElementById("column2");
 
 // SELECT
-if(chng.addEventListener('change', function(){
+if (chng.addEventListener('change', function () {
     cleanTable();
     insertCellsValues();
 }));
@@ -30,17 +30,17 @@ if(chng.addEventListener('change', function(){
 // });
 
 // PESSOAS FERIDAS
-if(value.addEventListener('click', function(){
+if (value.addEventListener('click', function () {
     cleanTable();
     insertCellsSort();
 }));
 
-function cleanTable(){
+function cleanTable() {
     table.innerHTML = "";
 }
 
-function insertCellsValues(){
-    for(i of year){
+function insertCellsValues() {
+    for (i of year) {
         row = document.getElementById("table").insertRow(-1);
         firstCell = row.insertCell(-1);
         secondCell = row.insertCell(-1);
@@ -50,8 +50,8 @@ function insertCellsValues(){
     // else(chamar insertCellsSort());
 }
 
-function insertCellsSort(){
-    for(i of year){
+function insertCellsSort() {
+    for (i of year) {
         row = document.getElementById("table").insertRow(-1);
         firstCell = row.insertCell(-1);
         secondCell = row.insertCell(-1);
@@ -59,34 +59,34 @@ function insertCellsSort(){
     }
 }
 
-function insertValues(){
+function insertValues() {
     // INSERIR ANO (precisa fazer 1 vez só)
     let ind = document.getElementById("slct").selectedIndex;
     let title = document.getElementById("slct").options[ind];
     document.getElementById("title").innerHTML = title.text;
     let count = year.indexOf(i);
-    firstCell.innerHTML = i.slice(0,4);
+    firstCell.innerHTML = i.slice(0, 4);
     // IF ELSE PARA VALUES E SORT. Como fazer?
-    if(arr[ind][count] == null){
+    if (arr[ind][count] == null) {
         secondCell.innerHTML = '-';
     }
-    else{
+    else {
         arrayFilter.push(arr[ind][count]);
         console.log(row.rowIndex);
         secondCell.innerHTML = arr[ind][count];
-        average = ((arr[ind]).reduce((accum, curr) => accum + curr)/arrayFilter.length).toFixed(2);
-        if(arrayFilter.length == 26){
+        average = ((arr[ind]).reduce((accum, curr) => accum + curr) / arrayFilter.length).toFixed(2);
+        if (arrayFilter.length == 26) {
             let max = Math.max(...arrayFilter);
             let min = Math.min(...arrayFilter);
             arr[ind].push(average, max, min);
         }
-    }        
+    }
 }
 
 // ORDENAR PELO ÍNDICE DE CADA CÉLULA (?)
 // CRIAR UM OBJETO COM KEY (ANO), VALOR (VALUE) E PRINTAR NA ORDEM CORRETA
-function sorted(){
-    firstCell.innerHTML = i.slice(0,4);
+function sorted() {
+    firstCell.innerHTML = i.slice(0, 4);
     let count = year.indexOf(i);
     let ind = document.getElementById("slct").selectedIndex;
     console.log(arr[ind]);
@@ -108,14 +108,64 @@ function sorted(){
 //     }
 
 
-// // CHART.JS
-// var chart = document.getElementById("chart").getContext("2d");
-// var x = {
-//     type: 'bar',
-//     data: {
-//         labels: year,
-//         datasets: arrayFilter
-//     }
-// };
+// CHART.JS
+//var chart = document.getElementById("chart").getContext("2d");
+//var x = {
+//  type: 'bar',
+//    data: {
+//       labels: year,
+//        datasets: arrayFilter
+//    }
+//};
 
-// var myFirstChart = new Chart(chart, x);
+//var myFirstChart = new Chart(chart, x);
+
+
+let firstGraf = document.getElementById('firstGraf').getContext('2d');
+let chart = new Chart(firstGraf, {
+    type: 'bar',
+
+    data: {
+        labels: year,
+
+        datasets: [
+            {
+                label: 'Ciclistas',
+                data: arr[1],
+                backgroundColor: "#162e3a",
+            },
+            {
+                label: 'Motociclistas',
+                data: arr[2],
+                backgroundColor: "#4bb7a0",
+            },
+            {
+                label: 'Ocupantes de caminhão grande',
+                data: arr[3],
+                backgroundColor: "#ca5b40",
+            },
+            {
+                label: 'Ocupantes de caminhão pequeno',
+                data: arr[4],
+                backgroundColor: "#9fcde5",
+            },
+            {
+                label: 'Ocupantes de carro',
+                data: arr[5],
+                backgroundColor: "#FFD700",
+            },
+            {
+                label: 'Pedestres',
+                data: arr[6],
+                backgroundColor: "#ffd164",
+            },
+            {
+                label: 'Rodovias',
+                data: arr[7],
+                backgroundColor: "#b2e4ff",
+            }
+        ]
+    }
+});
+
+
