@@ -101,6 +101,7 @@ main{
     background-color: rgb(31, 39, 57);
 }
 
+
 .calcAg p{
     display: block;
 
@@ -158,3 +159,13 @@ img.acende {
 img.acende:hover {
     opacity: 1.0; 
 }
+
+.chart{
+    background-color: #569dc8;
+    width: 1200px;
+    margin: 20px;
+    height: 350px;
+    padding: 10px;
+    }
+
+    

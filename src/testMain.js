@@ -31,6 +31,7 @@ let min;
 //     console.log(obj);
 // });
 
+
 // // SELECT
 if(chng.addEventListener('change', function(){
     cleanTable();
@@ -155,6 +156,53 @@ function sorted(){
 //     }
 
 
+let firstGraf = document.getElementById('firstGraf').getContext('2d');
+let chart = new Chart(firstGraf, {
+    type: 'bar',
+
+    data: {
+        labels: year,
+
+        datasets: [
+            {
+                label: 'Ciclistas',
+                data: arr[1],
+                backgroundColor: "#162e3a",
+            },
+            {
+                label: 'Motociclistas',
+                data: arr[2],
+                backgroundColor: "#4bb7a0",
+            },
+            {
+                label: 'Ocupantes de caminhão grande',
+                data: arr[3],
+                backgroundColor: "#ca5b40",
+            },
+            {
+                label: 'Ocupantes de caminhão pequeno',
+                data: arr[4],
+                backgroundColor: "#9fcde5",
+            },
+            {
+                label: 'Ocupantes de carro',
+                data: arr[5],
+                backgroundColor: "#FFD700",
+            },
+            {
+                label: 'Pedestres',
+                data: arr[6],
+                backgroundColor: "#ffd164",
+            },
+            {
+                label: 'Rodovias',
+                data: arr[7],
+                backgroundColor: "#b2e4ff",
+            }
+        ]
+    }
+});
+
 
 
 
@@ -242,4 +290,3 @@ function sorted(){
 //     }
 // };
 
-// var myFirstChart = new Chart(chart, x);
