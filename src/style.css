@@ -92,24 +92,20 @@ main{
     background-color: rgb(121, 121, 136);
 }
 
-/* .container tr:nth-last-child(-n+3){
-    font-weight: bold;
-    background-color: rgb(31, 39, 57);
-} */
-
 .container tr:hover {
     background-color: rgb(31, 39, 57);
 }
 
-
 .calcAg p{
-    display: block;
-
-}
-
-#chart{
-    width: 100px;
-    height: 100px;
+     background-color: #4bb7a0;
+     font-weight: bold;
+     width: 45%;
+     margin: auto;
+     font-size: 20px;
+      margin-bottom: 150px;
+     padding: 2%;
+     color: rgb(255, 255, 255);
+     display: inline-block;
 }
 
 .fundo{
@@ -166,6 +162,6 @@ img.acende:hover {
     margin: 20px;
     height: 350px;
     padding: 10px;
-    }
+}
 
     

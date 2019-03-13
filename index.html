@@ -10,7 +10,7 @@
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="shortcut icon" href="src/favicon.ico" type="image/x-icon">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
-  <script src="src/Chart.min.js"></script>
+  <script src="src/Chart.js"></script>
 
 </head>
 
@@ -60,16 +60,18 @@
       </tbody>
     </table>
 
-    <div id="chart">
-      <canvas id="firstGraf" width="1200" height="350" ></canvas>
-  </div>
-
     <section class="calcAg">
       <p id="media"></p>
       <p id="max"></p>
       <p id="min"></p>
     </section>
-    <canvas id="chart"></canvas>
+
+    <section id="sorted"></section><br><br>
+    
+    <section id="chart">
+      <canvas id="firstGraf" width="1200" height="350" ></canvas>
+    </section>
+
 
   </main>
   <div id="root"></div>

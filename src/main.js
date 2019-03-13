@@ -1,132 +1,297 @@
-// Recomendamos usar src/main.js para toda a parte do seu código 
-// destinada a mostrar dados na tela. Com isto nos referimos basicamente 
-// as manipulações de DOM: operações como criação de nós, registro de 
-// manipuladores de eventos (event listeners ou event handlers), etc.
+// cleanTable(); fazer para todos os eventos
+// // insertCells(); fazer para todos os eventos (?)
+// // insertYear(); fazer para todos os eventos
+// insertValues(); chamar uma função para cada evento (2)
+// // printValues(); fazer para todos os eventos
 
-// Esta não é a única forma de dividir seu código. Você pode usar mais 
-// arquivos e pastas para que sua estrutura fique clara para suas 
-// companheiras.
+const data = Object.values((INJURIES));
 
-// visualizar os dados, filtrá-los, ordená-los e fazer algum cálculo agregado.
+let yearChart = data.map((elem) => (elem.Year));
 
-// Como mínimo, sua implementação deve:
-// Mostrar os dados em uma interface: pode ser um card, uma tabela, uma lista, etc.
-// Permitir ao usuário filtrar e ordenar os dados.
-// Calcular estatísticas como média aritmética, máximo e/ou mínimo de algum atributo numérico, ou contar quantas vezes aparece um determinado valor, por exemplo.
+const arr = [0, data.map((elem) => (elem.Total_Injured_Persons_Pedalcyclists)), data.map((elem) => (elem.Total_Injured_Persons_Motorcyclists)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Large)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Light)), data.map((elem) => (elem.Total_Injured_Persons_Passenger_Car_Occupants)), data.map((elem) => (elem.Total_Injured_Persons_Pedestrians)), data.map((elem) => (elem.Total_Injured_Persons_Highway))];
+
+let obj = {};
+// let objSort = {};
+let year;
+let values;
+let ind;
+let chng = document.getElementById("slct");
+let clickColumn2 = document.getElementById("column2");
+let count;
+let arrayFilter;
+let arraySort;
+let average;
+let max;
+let min;
+
+// FUNCIONANDO!!!!!!!!!!!!!!!!!!!!!!!!!!
+// let chng = document.getElementById("slct").addEventListener('change', function(){
+//     let ind = document.getElementById("slct").selectedIndex;
+//     for(i in data){
+//         year = data[i].Year;
+//         values = arr[ind][i];
+//         obj[year] = values;
+//     }
+//     console.log(obj);
+// });
 
 
-// acessar os dados que estão no documento injuries.js
-let data = Object.values((INJURIES));
+// // SELECT
+if(chng.addEventListener('change', function(){
+    cleanTable();
+    ind = document.getElementById("slct").selectedIndex;
+    let title = document.getElementById("slct").options[ind];
+    document.getElementById("title").innerHTML = title.text;
+    insertCellsValues();
+}));
 
-// mapear o (elemento), o (indice), o (array) e dar um console.log de cada um desses parâmetros ou apenas daquele que vc quiser
-// data.map((elem, i, array) => console.log(elem.Total_Injured_Persons_Motorcyclists));
-
-// armazenar em uma array os valores de todos os anos e de Total_Injured_Persons_Motorcyclists
-// let year = data.map((elem) => (elem.Year));
-
-// pegar os valores anuais das categorias do dropdown e guardar em uma array
-let arr = [data.map((elem) => (elem.Year)), data.map((elem) => (elem.Total_Injured_Persons_Pedalcyclists))];
-    // , data.map((elem) => (elem.Total_Injured_Persons_Motorcyclists)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Large)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Light)), data.map((elem) => (elem.Total_Injured_Persons_Passenger_Car_Occupants)), data.map((elem) => (elem.Total_Injured_Persons_Bus_Occupants)), data.map((elem) => (elem.Total_Injured_Persons_Passenger_Or_Occupant)), data.map((elem) => (elem.Total_Injured_Persons_Pedestrians)), data.map((elem) => (elem.Total_Injured_Persons_Highway)), data.map((elem) => (elem.Total_Injured_Persons_Commuter_Carrier))];
-
-// Vincular as opções do dropdown com a função categories
-let chng = document.getElementById("slct").addEventListener('change', categories);
-
-// FILTRAR E VISUALIZAR OS DADOS
-// pegar cada valor dentro da array arr e imprimir na coluna valor, começando na cell[i] (O ÍNDICE DROPDOWN DEVE SER IGUAL A POSIÇÃO DO ARRAY)
-function categories(){
-    // pegar cada valor dentro da array year e imprimir na coluna ano
-    let ind = document.getElementById("slct").selectedIndex;
-    console.table(arr[ind]);
+function cleanTable(){
+    table.innerHTML = "";
 }
-        let row = document.getElementById("year").insertRow(-1);
-        let cell = row.insertCell(-1);
-        cell.innerHTML = i;
+
+function insertCellsValues(){
+    count = 0;
+    arrayFilter = [];
+    arraySort = [];
+    for(i of data){
+        row = document.getElementById("table").insertRow(-1);
+        firstCell = row.insertCell(-1);
+        secondCell = row.insertCell(-1);
+        getData();
     }
-    // let row = document.getElementById("value").clear;
-    var teste = arr[ind];
-    // pegar cada valor dentro das diferentes categorias da array arr e imprimir na coluna valor
-    for(i of arr[ind]){
-        // pegar o INDEX do i para colocar no row.deleteCell[i[index]]
-        // let delC = arr[ind].indexOf(i);
-        // console.log(delC);
-        // row.deleteCell(i[delC]);
-        row = document.getElementById("value").insertRow(-1);
-        if(i == null){
-            cell = row.insertCell(-1);
-            cell.innerHTML = '-';
-            i = 0;
-        }
-        else{
-            cell = row.insertCell(-1);
-            cell.innerHTML = i;
-        }
+}
+
+function getData(){
+    year = i.Year.slice(0, 4);
+    values = arr[ind][count];
+    obj[year] = values;
+    // objSort = year + ': ' + values;
+    count += 1;
+    insertValues();
+}
+
+function insertValues(){
+    // firstCell.innerHTML = yearChart[count-1];
+    firstCell.innerHTML = Object.keys(obj)[count-1];
+    if(obj[year] == null){
+        secondCell.innerHTML = '-';
+        arraySort.push(0); 
     }
-    // let sorted = document.getElementById("column2").addEventListener('click', sortedTable);
-    // teste.sort()
-    // ORDENAR
-    let sortedTable = teste.sort((a, b) => (a > b ? 1 : -1));
-    // function sortedTable(a, b){
-    //     console.log(b);
-    //     if(b >= a){
-    //         console.log(1);
-    //     }
-    //     else{
-    //         console.log(0);
-    //         // return -1;
-    //     }
+    else{
+        secondCell.innerHTML = obj[year];
+        arrayFilter.push(obj[year]);
+        arraySort.push(obj[year]);
+        calc();
+    }
+}
+
+// CALCULO AGREGADO
+function calc(){
+    average = (arrayFilter.reduce((accum, curr) => accum + curr)/arrayFilter.length).toFixed(2);
+    max = Math.max(...arrayFilter);
+    min = Math.min(...arrayFilter);
+    document.getElementById("media").innerHTML = 'Média: ' + average;
+    document.getElementById("max").innerHTML = 'Máxima: ' + max;
+    document.getElementById("min").innerHTML = 'Mínima: ' + min;
+}
+
+
+
+
+
+// Object.entries() retorna um array dos pares key: value
+
+// // ORDENAR
+// // CRIAR UM OBJETO COM KEY (ANO), VALOR (VALUE) E PRINTAR NA ORDEM CORRETA
+if(clickColumn2.addEventListener('click', function(){
+    document.getElementById("sorted").innerHTML = arraySort.sort();
+    // cleanTable();
+    // count = 0;
+    // insertCellsSort();
+}));
+
+// function insertCellsSort(){
+//     for(i of data){
+//     row = document.getElementById("table").insertRow(-1);
+//     firstCell = row.insertCell(-1);
+//     secondCell = row.insertCell(-1);
+//     sorted();
+//     }
+// }
+
+// function sorted(){
+//     // if(arr[count] == null){
+//     document.getElementById("sorted").innerHTML = arraySort.sort();
+    // firstCell.innerHTML = Object.keys(obj)[count];
+    // if((Object.values(obj)[count]) == null){
+    //     secondCell.innerHTML = '-';
     // }
-    console.log(sortedTable);
-}
+    // else{
+    //     secondCell.innerHTML =  Object.values(obj)[count];
+    // }
+    // console.log(Object.values(obj)[count]);
+    // }
+    // count += 1;
+    // let sort = arr[count].sort();
+    // firstCell.innerHTML = Object.keys(obj);
 
-// sorted.sort((a,b) => (b >= a ? 1 : -1));
-// sort(): do maior para o menor e vice-versa (vídeo Jaque 22 min)
-//         addEventListener() do clique no 'Ano' e 'Valor'
-//         function()
+    // else{
+    //     secondCell.innerHTML = sort;
+    // }
+    // console.log(obj[year].sort());
+// }
+//     firstCell.innerHTML = i.slice(0,4);
+//     let count = year.indexOf(i);
+//     let ind = document.getElementById("slct").selectedIndex;
+//     console.log(arr[ind]);
+//     let sortedAsc = arr[ind].sort();
+//     // console.log(sortedAsc.indexOf(i));
+//     // console.log(sortedAsc[count]);
+//     let sortedDesc = arr[ind].reverse();
+//     secondCell.innerHTML = sortedAsc[count];
+// }
 
-// ESSA FUNÇÃO SÓ VAI SER CHAMADA SE O USUÁRIO CLICAR NO 'ANO' OU 'VALOR'
-// ADICIONAR UM MOUSEOVER 
-// ELE NÃO TÁ ACHANDO A E B
-
-
-
-
-
-
-
-
-
-
-// posso usar a tabela com uma coluna e concatenar year e value (ficaria bom??? acho que não)
-// usar template string (?????)
-// replaceChild(): 
-
-
-
-
-
+//     function sortedAsc(){
+//         console.log(arr[ind].sort());
+//             // (a, b) => (a > b ? 1 : -1)));
+//     }
+//     function sortedDesc(){
+//         console.log(arr[ind].reverse());
+//             // (a, b) => (a > b ? -1 : 1)));
+//     }
 
 
+let firstGraf = document.getElementById('firstGraf').getContext('2d');
+let chart = new Chart(firstGraf, {
+    type: 'bar',
 
-// FILTRAR
-// filter(): valores maiores do que X
-//         criar uma variável input e um button (?)
-//         IF os dados forem maiores ou menores do que X > print
-// let but = document.getElementById("filter").value.addEventListener("click", v);
-// function v(){
-//     if(values > i){
-//         console.log(i);
+    data: {
+        labels: yearChart,
+
+        datasets: [
+            {
+                label: 'Ciclistas',
+                data: arr[1],
+                backgroundColor: "#162e3a",
+            },
+            {
+                label: 'Motociclistas',
+                data: arr[2],
+                backgroundColor: "#4bb7a0",
+            },
+            {
+                label: 'Ocupantes de caminhão grande',
+                data: arr[3],
+                backgroundColor: "#ca5b40",
+            },
+            {
+                label: 'Ocupantes de caminhão pequeno',
+                data: arr[4],
+                backgroundColor: "#9fcde5",
+            },
+            {
+                label: 'Ocupantes de carro',
+                data: arr[5],
+                backgroundColor: "#FFD700",
+            },
+            {
+                label: 'Pedestres',
+                data: arr[6],
+                backgroundColor: "#ffd164",
+            },
+            {
+                label: 'Rodovias',
+                data: arr[7],
+                backgroundColor: "#b2e4ff",
+            }
+        ]
+    }
+});
+
+
+
+
+
+
+
+// let arrayFilter = [];
+
+
+
+// // PESSOAS FERIDAS
+// if(value.addEventListener('click', function(){
+//     cleanTable();
+//     insertCellsSort();
+// }));
+
+
+
+// function insertCellsSort(){
+//     for(i of year){
+//         row = document.getElementById("table").insertRow(-1);
+//         firstCell = row.insertCell(-1);
+//         secondCell = row.insertCell(-1);
+//         sorted();
+//     }
+// }
+// let x;
+// function insertValues(){
+//     // firstCell.innerHTML = year;
+//     // for(i in obj){
+//     //     firstCell.innerHTML = i;
+//     //     console.log(obj[i]);
+//     //     secondCell.innerHTML = obj[i];
+//     // }
+//     firstCell.innerHTML = obj.year;
+//     // x = values[data.indexOf(i)];
+//     if(values == null){
+//         secondCell.innerHTML = '-';
+//     }
+//     else{
+//         // secondCell.innerHTML = x;
+//         // console.log(obj[year]);
+//         secondCell.innerHTML = values;
+//     }
+    // insert average, max, min
+    // reduce(values) / values.length
+    // Math.max(values);
+    // Math.min(values);
+// }
+
+// secondTable();
+
+// function secondTable(){
+//     let average = (values[data.indexOf(i)]).reduce();
+//     console.log(average);
+// }
+
+//     // IF ELSE PARA VALUES E SORT. Como fazer?
+//     if(arr[ind][count] == null){
+//         secondCell.innerHTML = '-';
+//     }
+//     else{
+//         arrayFilter.push(arr[ind][count]);
+//         console.log(row.rowIndex);
+//         secondCell.innerHTML = arr[ind][count];
+//         average = ((arr[ind]).reduce((accum, curr) => accum + curr)/arrayFilter.length).toFixed(2);
+//         if(arrayFilter.length == 26){
+//             let max = Math.max(...arrayFilter);
+//             let min = Math.min(...arrayFilter);
+//             arr[ind].push(average, max, min);
+//         }
+//     }        
+// }
+
+
+
+
+// // CHART.JS
+// var chart = document.getElementById("chart").getContext("2d");
+// var x = {
+//     type: 'bar',
+//     data: {
+//         labels: year,
+//         datasets: arrayFilter
 //     }
 // };
 
-
-
-
-
-
-
-
-
-
-// CÁLCULO AGREGADO
-// adicionar o cálculo agregado em outro lugar que não a tabela
-// reduce(média);
