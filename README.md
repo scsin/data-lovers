@@ -101,9 +101,9 @@ Os dados podem ser visualizados na pasta src > data e os temas são os seguintes
     Trabalhar com dados pode ser algo complexo. O site SaLa Estatística fornece informações de acidentes de transportes de forma rápida e clara,economizando tempo e energia do pesquisador.
 
 ## Protótipo
-![Design Sprint](assets/Image2.jpeg)
-![Design Sprint](assets/Image3.jpeg)
-![Protótipo do Site](assets/Image1.jpeg), (https://marvelapp.com/a493g7h)
+![Design Sprint](src/assets/Image2.jpeg)
+![Design Sprint](src/assets/Image3.jpeg)
+![Protótipo do Site](src/assets/Image1.jpeg)
 
 ## Testes de usabilidade
     Os testes detectaram problemas nas funcionalidades do protótipo e ajudaram a identificar possíveis melhorias a serem implantadas.
