@@ -70,6 +70,7 @@ main{
 
 #column2:hover{
     cursor: pointer;
+    background-color: #569dc8;
 }
 
 .container {

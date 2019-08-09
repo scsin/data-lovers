@@ -1,35 +1,33 @@
 const data = Object.values((INJURIES));
 
-let yearChart = data.map((elem) => (elem.Year));
+const yearChart = data.map((elem) => (elem.Year));
 
 const arr = [0, data.map((elem) => (elem.Total_Injured_Persons_Pedalcyclists)), data.map((elem) => (elem.Total_Injured_Persons_Motorcyclists)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Large)), data.map((elem) => (elem.Total_Injured_Persons_Truck_Occupants_Light)), data.map((elem) => (elem.Total_Injured_Persons_Passenger_Car_Occupants)), data.map((elem) => (elem.Total_Injured_Persons_Pedestrians)), data.map((elem) => (elem.Total_Injured_Persons_Highway))];
 
 let obj = {};
-let year;
-let values;
-let ind;
-let chng = document.getElementById("slct");
-let clickColumn2 = document.getElementById("column2");
+const chng = document.getElementById("slct");
+const clickColumn2 = document.getElementById("column2");
 let count;
 let arrayFilter;
 let arraySort;
 let average;
 let max;
 let min;
+const firstGraf = document.getElementById('firstGraf').getContext('2d');
 
-if(chng.addEventListener('change', function(){
+chng.addEventListener('change', function(){
     cleanTable();
-    ind = document.getElementById("slct").selectedIndex;
+    let ind = document.getElementById("slct").selectedIndex;
     let title = document.getElementById("slct").options[ind];
     document.getElementById("title").innerHTML = title.text;
-    insertCellsValues();
-}));
+    insertCellsValues(ind);
+});
 
 function cleanTable(){
     table.innerHTML = "";
 }
 
-function insertCellsValues(){
+function insertCellsValues(ind){
     count = 0;
     arrayFilter = [];
     arraySort = [];
@@ -37,23 +35,23 @@ function insertCellsValues(){
         row = document.getElementById("table").insertRow(-1);
         firstCell = row.insertCell(-1);
         secondCell = row.insertCell(-1);
-        getData();
+        getData(ind);
     }
 }
 
-function getData(){
-    year = i.Year.slice(0, 4);
-    values = arr[ind][count];
+function getData(ind){
+    let year = i.Year.slice(0, 4);
+    const values = arr[ind][count];
     obj[year] = values;
     count += 1;
-    insertValues();
+    insertValues(year);
 }
 
-function insertValues(){
+function insertValues(year){
     firstCell.innerHTML = Object.keys(obj)[count-1];
     if(obj[year] == null){
         secondCell.innerHTML = '-';
-        arraySort.push(0); 
+        arraySort.push(0);
     }
     else{
         secondCell.innerHTML = obj[year];
@@ -72,11 +70,10 @@ function calc(){
     document.getElementById("min").innerHTML = 'Mínima: ' + min;
 }
 
-if(clickColumn2.addEventListener('click', function(){
+clickColumn2.addEventListener('click', function(){
     document.getElementById("sorted").innerHTML = arraySort.sort();
-}));
+});
 
-let firstGraf = document.getElementById('firstGraf').getContext('2d');
 let chart = new Chart(firstGraf, {
     type: 'bar',
 
